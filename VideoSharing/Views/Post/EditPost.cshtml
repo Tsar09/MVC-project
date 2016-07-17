@@ -1,0 +1,34 @@
+﻿@model VideoSharing.Models.EditPostModel
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.Edit;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="text-center">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Video)
+
+            <div class="editor-label">
+                @VideoSharing.Resources.Global.Description
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+            </div>
+
+            <div>
+               <input type="submit" value=@VideoSharing.Resources.Global.Edit />
+            </div>
+          </div>
+        </div>
+        }

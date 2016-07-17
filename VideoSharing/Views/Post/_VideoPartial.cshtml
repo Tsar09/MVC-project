@@ -1,0 +1,25 @@
+﻿@model VideoSharing.Models.PostModel
+
+@using (Html.BeginForm("Video", "Post"))
+{
+    <div>
+        <div>
+            <div class="text-left">
+                @Html.DisplayFor(model => model.Description)
+                <iframe width="738"
+                        height="415"
+                        src="http://www.youtube.com/embed/@Model.Video"
+                        frameborder="0"
+                        allowfullscreen></iframe>
+
+                @Html.DisplayFor(model => model.User.Name) @Html.DisplayFor(model => model.Date)
+                @if (ViewBag.Id == Model.UserID || User.IsInRole("admin"))
+                       {
+                @Html.ActionLink(@VideoSharing.Resources.Global.Delete, "Delete", new { id = Model.Id })
+    <b></b>
+                @Html.ActionLink(@VideoSharing.Resources.Global.Edit, "EditPost", new { id = Model.Id })
+}
+            </div>
+        </div>
+    </div>
+}

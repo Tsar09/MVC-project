@@ -1,0 +1,30 @@
+﻿@model IEnumerable<VideoSharing.Models.PostModel>
+
+@using (Html.BeginForm("Posts", "Post"))
+{
+foreach (var item in Model)
+{
+    <div>
+        <div>
+            <iframe width="738"
+                    height="415"
+                    src="http://www.youtube.com/embed/@item.Video"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+                <div class="container text-left">
+                    <p>    @Html.ActionLink(item.User.FullName, "Account", "User", new { id = item.User.Id }, null) @Html.DisplayFor(modelItem => item.Date) | 
+                       @if (ViewBag.Id == item.UserID || User.IsInRole("admin"))
+                       { 
+                        @Html.ActionLink(VideoSharing.Resources.Global.Delete, "Delete", new { id = item.Id })
+                           <b></b>
+                        @Html.ActionLink(VideoSharing.Resources.Global.Edit, "EditPost", new { id = item.Id }) 
+                       }
+                        @Html.ActionLink(VideoSharing.Resources.Global.Description, "AddComment", new { id = item.Id })
+                        </p>
+                    </div>
+                </div>
+          
+        </div>
+}
+  
+}   

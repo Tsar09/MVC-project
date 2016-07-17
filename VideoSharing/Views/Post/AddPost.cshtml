@@ -1,0 +1,26 @@
+﻿@model VideoSharing.Models.PostModel
+
+@using (Html.BeginForm("AddPost", "Post"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+   
+    <fieldset>           
+            <div class="text-center container" style="width:769px">
+                <div style="margin-top:20px">
+                    <form method="get">
+                        <div>
+                            @Html.TextBoxFor(model => model.Video, new { style = "width:769px", placeholder = @VideoSharing.Resources.Global.VideoLink })                         
+                            @Html.TextBoxFor(model => model.Description, new { style = "width:769px;", placeholder = @VideoSharing.Resources.Global.Description })
+                          
+                            <input type="submit" value=@VideoSharing.Resources.Global.Post style="margin:20px 0" name="action" />    
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Video) 
+                        @Html.ValidationMessageFor(model => model.Description)                 
+                    </form>
+                    @Html.Action("Posts")
+                </div>
+            </div>      
+    </fieldset>
+}
+
