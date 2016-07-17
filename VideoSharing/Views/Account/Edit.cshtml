@@ -1,0 +1,37 @@
+﻿@model VideoSharing.Models.EditModel
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.Edit;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Account", new { Id = Model.Id}))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary(true, "")
+        <div>
+            <div class="editor-label">
+                @VideoSharing.Resources.Global.FirstName
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+            </div>
+            <div class="editor-label">
+                @VideoSharing.Resources.Global.LastName
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <input type="submit" value=@VideoSharing.Resources.Global.Edit />
+            </div>
+        </div>
+    </div>
+}
+
