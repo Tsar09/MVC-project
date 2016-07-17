@@ -1,0 +1,45 @@
+﻿@model IEnumerable<VideoSharing.Models.UserModel>
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.People;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("People", "User", FormMethod.Get))
+{
+    @Html.TextBox("SearchString", ViewBag.FilterValue as string)
+    <input type="submit" value="Search" />
+}
+
+<table class="user_table">
+    <tr>
+        <th>
+           @VideoSharing.Resources.Global.FirstName
+        </th>
+        <th>
+          @VideoSharing.Resources.Global.LastName
+
+        <th>
+         @VideoSharing.Resources.Global.PostCount
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Account", new { id = item.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostCount)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<VideoSharing.Models.UserModel>
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.People;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.ActionLink(@VideoSharing.Resources.Global.People, "PeopleTable", "User", new { searchString = "", sortOrder = "", filterValue = "" }, null)
+@Html.ActionLink(@VideoSharing.Resources.Global.Posts, "PostsTable", "Post", new { searchString = "", sortOrder = "", filterValue = "" }, null)
+@Html.ActionLink(@VideoSharing.Resources.Global.Comments, "CommentsTable", "Post", new { searchString = "", sortOrder = "", filterValue = "" }, null)
+               
+@using (Html.BeginForm("PeopleTable", "User", FormMethod.Get))
+{
+@Html.TextBox("SearchString", ViewBag.FilterValue as string)
+    <input type="submit" value="Search" />
+}
+
+    <table class="user_table">
+        <tr>
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.FirstName, "PeopleTable", new { sortOrder = ViewBag.NameSortParm, filterValue = ViewBag.FilterValue })               
+            </th>
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.LastName, "PeopleTable", new { sortOrder = ViewBag.LastNameSortParm, filterValue = ViewBag.FilterValue })               
+
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.PostCount, "PeopleTable", new { sortOrder = ViewBag.PostCountSortParm, filterValue = ViewBag.FilterValue })   
+            </th>
+        </tr>
+       
+        @foreach (var item in Model)
+        {
+           
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "Account", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostCount)
+                </td>
+
+                <td>
+                    @Html.ActionLink(@VideoSharing.Resources.Global.Edit, "Edit", "Account", new { id = item.Id}, null)  
+                </td>
+
+                <td>
+                    @Html.ActionLink(@VideoSharing.Resources.Global.Delete, "Delete", "Account", new { id = item.Id }, null)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>

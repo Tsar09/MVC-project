@@ -1,0 +1,33 @@
+﻿@model VideoSharing.Models.UserModel
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-group">
+
+   
+    <div class="text-center">
+
+        <h2> @Html.DisplayFor(model => model.FullName)</h2>
+       
+        <h4>@Html.DisplayFor(model => model.PostCount) posts</h4>
+           
+
+       <h4> 
+    @if (ViewBag.IsFollow)
+    {
+        @Html.ActionLink(VideoSharing.Resources.Global.UnFollow, "ChangeFollow", "User", new { startFollow = true, id = Model.Id }, null)
+        @*@Html.ActionLink(VideoSharing.Resources.Global.Follow, "StartFollow", "User")*@
+    }
+    else
+    {
+        @Html.ActionLink(VideoSharing.Resources.Global.Follow, "ChangeFollow", "User", new { startFollow = false, id = Model.Id }, null)
+        @*@Html.ActionLink(VideoSharing.Resources.Global.UnFollow, "StopFollow", "User")*@
+    }</h4>
+        <br /> 
+        @Html.ActionLink(@VideoSharing.Resources.Global.Edit, "Edit", new { controller = "Account", Model.Id }).If(User.IsInRole("admin")) 
+        @Html.ActionLink(@VideoSharing.Resources.Global.Delete, "Delete", new { controller = "Account", id = Model.Id }).If(User.IsInRole("admin"))
+    </div>
+</div>

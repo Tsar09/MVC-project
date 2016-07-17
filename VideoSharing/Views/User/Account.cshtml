@@ -1,0 +1,22 @@
+﻿@model VideoSharing.Models.UserModel
+
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@VideoSharing.Resources.Global.Account</h2>
+
+
+<div class="form-group">
+    <div class="text-center">
+
+        <h2> @Html.DisplayFor(model => model.FullName)</h2>
+
+        <h4>@Html.DisplayFor(model => model.PostCount) posts</h4>
+
+        @Html.ActionLink(@VideoSharing.Resources.Global.Edit, "Edit", new { controller = "Account", id = Model.Id }) | 
+        @Html.ActionLink(@VideoSharing.Resources.Global.Delete, "Delete", new { controller = "Account", id = Model.Id })
+        </div>
+    </div>
+

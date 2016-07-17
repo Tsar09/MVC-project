@@ -1,0 +1,50 @@
+﻿@model IEnumerable<VideoSharing.Business.DTO.ClientProfileDTO>
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.Friends;
+}
+
+<h2>@VideoSharing.Resources.Global.Friends</h2>
+
+    <table class="user_table">
+        <tr>
+            <th>
+                @VideoSharing.Resources.Global.FirstName
+            </th>
+            <th>
+                @VideoSharing.Resources.Global.LastName
+
+            <th>
+                @VideoSharing.Resources.Global.PostCount
+            </th>
+
+            <th>
+                @VideoSharing.Resources.Global.Action
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostCount)
+                </td>
+
+                <td>
+                    @Html.ActionLink(@VideoSharing.Resources.Global.UnFollow, "Unfollow", new {  id = item.Id})
+                </td>
+            </tr>
+        }
+    </table>
+
+       
+
+
+
