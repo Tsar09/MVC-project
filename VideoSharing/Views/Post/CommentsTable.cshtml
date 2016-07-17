@@ -1,0 +1,55 @@
+﻿@model IEnumerable<VideoSharing.Models.CommentModel>
+
+@{
+    ViewBag.Title = @VideoSharing.Resources.Global.Comments;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_TablePartial")
+
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm("CommentTable", "Post", FormMethod.Get))
+    {
+        @Html.TextBox("SearchString", ViewBag.FilterValue as string)
+        <input type="submit" value="Search" />
+    }
+
+    <table class="user_table">
+        <tr>
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.Description, "CommentsTable", new { sortOrder = ViewBag.DescriptionSortParam, filterValue = ViewBag.FilterValue })
+            </th>
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.Date, "CommentsTable", new { sortOrder = ViewBag.DateSortParam, filterValue = ViewBag.FilterValue })
+
+            <th>
+                @Html.ActionLink(@VideoSharing.Resources.Global.UserName, "CommentsTable", new { sortOrder = ViewBag.UserNameSortParam, filterValue = ViewBag.FilterValue })
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink(item.User.FullName, "Account", "User", new { id = item.User.Id }, null)
+                </td>
+                <td>
+                    @Html.ActionLink(@VideoSharing.Resources.Global.Edit, "EditComment", "Post", new { id = item.Id }, null)
+                </td>
+
+                <td>
+                    @Html.ActionLink(@VideoSharing.Resources.Global.Delete, "DeleteComment", "Post", new { id = item.Id }, null)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>

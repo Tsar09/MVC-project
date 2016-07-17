@@ -1,0 +1,22 @@
+﻿@model IEnumerable<VideoSharing.Models.CommentModel>
+
+@using (Html.BeginForm("Comments", "Post"))
+{
+    foreach (var item in Model)
+    {
+        <div>
+            <div>
+                @Html.ActionLink(item.User.FullName, "Account","User", new { id = item.User.Id },null) @Html.DisplayFor(modelItem => item.Date)
+            </div>
+            @Html.DisplayFor(modelItem => item.Text)          
+        </div>
+    if(ViewBag.Id == item.UserID || User.IsInRole("admin"))
+    {
+       @Html.ActionLink(VideoSharing.Resources.Global.Delete, "DeleteComment", new { id = item.Id })
+       <b></b>   
+       @Html.ActionLink(VideoSharing.Resources.Global.Edit, "EditComment", new { id = item.Id })
+    }
+    <hr>
+    }
+
+}

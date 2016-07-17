@@ -1,0 +1,28 @@
+﻿@model VideoSharing.Models.CommentModel
+  
+
+ <fieldset>
+            <div class="text-center container" style="width:769px">
+
+                <div style="margin-top:20px">
+                    @Html.Action("Video", "Post", new { id = Model.PostID })
+                    <div class="text-right">
+                        @Html.Action("Comments", "Post", new { id = Model.PostID })
+
+                        @using (Html.BeginForm("AddComment", "Post"))
+                        {  @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <form method="get">
+                                <div style="margin-bottom:20px">
+                                    @Html.HiddenFor(model => model.PostID)
+                                    @Html.EditorFor(model => model.Text)
+                                    <input type="submit" value=@VideoSharing.Resources.Global.Comment>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+
+</fieldset>
+
