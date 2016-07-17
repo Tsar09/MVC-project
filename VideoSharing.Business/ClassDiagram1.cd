@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VideoSharing.Business.DTO.AccountDTO" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAEAAAAAQAAAAAAAACAQQAAAAAAAg=</HashCode>
+      <FileName>DTO\AccountDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.ForgotPasswordDTO" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\AccountDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.UserInfoDTO" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>DTO\AccountDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.PasswordResertDTO" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAAAgAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DTO\AccountDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.ClientProfileDTO" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAIAADAAAAAQACAAAAAAAAAIAAAAAAAg=</HashCode>
+      <FileName>DTO\ClientProfileDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.CommentDTO" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAEAAAAAAAgACAAAAAABAAAACAAAAAA=</HashCode>
+      <FileName>DTO\CommentDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.ExceptionDTO" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAgAAAAAAAAAIAAAAAAARAAAEAAAAAAA=</HashCode>
+      <FileName>DTO\ExceptionDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.DTO.PostDTO" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAgAAAAAAAAAAgAAAAAAAABAAAAAAAAIAg=</HashCode>
+      <FileName>DTO\PostDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.ClientProfileService">
+    <Position X="1.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAEAAAAAAAAIQAAAAAAAAEAAAEAAAAIAgAAI=</HashCode>
+      <FileName>ClientProfileServise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.CommentService">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAIAEAAAAAAAAAQAAAAQEAAAAAAAAgAAAAgAAA=</HashCode>
+      <FileName>CommentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.ExceptionService" BaseTypeListCollapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAg=</HashCode>
+      <FileName>ExceptionService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSharing.Business.PostService">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGQACAAAAAAQAAEAAAAAAAAAAEACAgAgAAA=</HashCode>
+      <FileName>PostService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VideoSharing.Business.ServiceCreator" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ServiceCreator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSharing.Business.UserAccountService" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAGAAAAAAAAAAAAIAAAEAAMACAAEAIAAAAAA=</HashCode>
+      <FileName>UserAccountService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VideoSharing.Business.ValidationException">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ValitationExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="VideoSharing.Business.IExceptionService" Collapsed="true">
+    <Position X="1.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAg=</HashCode>
+      <FileName>IExceptionService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VideoSharing.Business.IServiceCreator" Collapsed="true">
+    <Position X="6.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>IServiceCreator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VideoSharing.Business.IUserService" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAIAAAEAAMACAAEAIAAAAAA=</HashCode>
+      <FileName>IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

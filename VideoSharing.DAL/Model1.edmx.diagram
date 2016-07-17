@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6959e86775d0481daf840799db2ad966" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="VideoSharingModel.ApplicationUsers" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.ClientProfiles" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.Comments" Width="1.5" PointX="7" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.ExceptionDescriptions" Width="1.5" PointX="7.125" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.IdentityRoles" Width="1.5" PointX="3.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.IdentityUserClaims" Width="1.5" PointX="2.875" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.IdentityUserLogins" Width="1.5" PointX="1.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.IdentityUserRoles" Width="1.5" PointX="5.375" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VideoSharingModel.Posts" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_ClientProfiles_dbo_ApplicationUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_IdentityUserClaims_dbo_ApplicationUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_IdentityUserLogins_dbo_ApplicationUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_IdentityUserRoles_dbo_ApplicationUsers_ApplicationUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_Comments_dbo_ClientProfiles_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_Posts_dbo_ClientProfiles_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_Comments_dbo_Posts_PostID" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.FK_dbo_IdentityUserRoles_dbo_IdentityRoles_IdentityRole_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="VideoSharingModel.Followers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
